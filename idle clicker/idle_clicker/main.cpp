@@ -7,7 +7,7 @@ int cpus = 1;
 int graphics_card = 1;
 int desktop = 0;
 int pc = 0;
-int tries = 0;
+int polygons = 0;
 void update()
 {
 	bits += cpus * 1;
@@ -35,9 +35,9 @@ void draw()
 	{
 		std::cout << "You have " << cpus << " CPU's!" << std::endl;
 	}
-	if (tries > 0)
+	if (polygons > 0)
 	{
-		std::cout << "You have " << tries << " Trie(s)!" << std::endl;
+		std::cout << "You have " << polygons << " polygons!" << std::endl;
 	}
 	if (graphics_card > 0)
 	{
@@ -92,14 +92,14 @@ void handleKey(char c)
 	{
 		if (cpus > 0)
 		{
-         tries = tries + 1;
+         polygons = polygons + 1;
 		}
 		draw();
 	}
 	if (c == '4')
-	{    if (tries >=30)
+	{    if (polygons >=30)
 		{
-			tries -= 30;
+			polygons -= 30;
 			graphics_card++;
 			draw();
 		}
